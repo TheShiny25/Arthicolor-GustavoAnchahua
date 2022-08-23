@@ -1,0 +1,13 @@
+.boxCart{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxCart span.nCart{
+    padding: 2%;
+    font-weight: bold;
+}
