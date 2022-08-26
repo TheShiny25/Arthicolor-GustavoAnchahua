@@ -1,0 +1,26 @@
+
+.box-contador>.row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.box-contador>.row>div{
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px;
+}
+.box-contador>.row div:nth-child(1),.box-contador>.row div:nth-child(3){
+    cursor: pointer;
+    color: #2596be;
+    user-select:none;
+}
+.box-contador>.row div:nth-child(1):hover,.box-contador>.row div:nth-child(3):hover{
+    background: #ACE5EE;
+}
+.box-contador>.row div:nth-child(2){}

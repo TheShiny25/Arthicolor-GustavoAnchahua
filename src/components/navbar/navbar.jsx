@@ -11,7 +11,7 @@ return (
                 <h1>Arthi<strong>color</strong></h1>
             </div>
             <div className="col-lg-7">
-                Zona Buscador
+                
             </div>
             <div className="col-lg-2">
                 <CartWidget/>

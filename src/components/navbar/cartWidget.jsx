@@ -7,7 +7,7 @@ const CartWidget =()=>{
     return (
         <div className='boxCart'>
             <img src={imgCart} alt="" />
-            <span className='nCart'>0</span>
+            <span className='nCart'>(0)</span>
         </div>
     );
 
