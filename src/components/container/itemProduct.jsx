@@ -1,14 +1,23 @@
 import React from "react";
 import ItemCount from "./itemCount";
+import './itemProduct.css'
 
-const ItemProduct = ()=>{
-    return (<div className="col-lg-2">
+const ItemProduct = ({itemProduct:{image,price,title,rating}}) =>{
+    const {count} = rating
+    return (
+    <div className="col-lg-3">
         <div className="boxPro">
             <div className="proImg">
-                Nombre de Producto
+                <img src={image} alt=""/>
             </div>
-            <ItemCount stocks='5' initial='0'/>
-            <div>Agregar Carrito</div>
+            <div className="proTitle">
+                {title}
+            </div>
+            <div className="proPre">
+                {`$/ `+ price}
+            </div>
+            <ItemCount stocks={count} initial='0'/>
+            <div className="addCartPro">Agregar Carrito</div>
         </div>
     </div>
     )

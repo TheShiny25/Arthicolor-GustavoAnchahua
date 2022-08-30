@@ -1,5 +1,5 @@
 
-.box-contador>.row{
+.box-contador>.boxCount{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -10,17 +10,17 @@
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-.box-contador>.row>div{
+.box-contador>.boxCount>div{
     font-size: 16px;
     font-weight: bold;
     padding: 8px;
 }
-.box-contador>.row div:nth-child(1),.box-contador>.row div:nth-child(3){
+.box-contador>.boxCount div:nth-child(1),.box-contador>.boxCount div:nth-child(3){
     cursor: pointer;
     color: #2596be;
     user-select:none;
 }
-.box-contador>.row div:nth-child(1):hover,.box-contador>.row div:nth-child(3):hover{
+.box-contador>.boxCount div:nth-child(1):hover,.box-contador>.boxCount div:nth-child(3):hover{
     background: #ACE5EE;
 }
-.box-contador>.row div:nth-child(2){}
+/*.box-contador>.boxCount div:nth-child(2){}*/

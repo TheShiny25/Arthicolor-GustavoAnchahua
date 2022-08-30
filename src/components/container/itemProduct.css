@@ -1,0 +1,29 @@
+.proImg {
+    text-align: center;
+    height: 260px;
+}
+
+.proImg img {
+    max-width: 100%;
+    max-height: 260px;
+}
+.proTitle{
+    height: 80px;
+}
+.proPre{
+    font-weight: bold;
+    text-align: center;
+}
+.addCartPro{
+    width: 80%;
+    padding: 3%;
+    text-align: center;
+    background-color: #2596be;
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+
+}
