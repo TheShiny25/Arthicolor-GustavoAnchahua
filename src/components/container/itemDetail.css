@@ -1,0 +1,6 @@
+.imagenPrincipal{
+    margin: 0 auto;
+}
+.imagenPrincipal img{
+    max-width: 90%;
+}
