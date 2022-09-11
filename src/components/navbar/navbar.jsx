@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {Link} from 'react-router-dom'
 import CartWidget from "./cartWidget";
 import './navbar.css';
 
@@ -25,7 +26,9 @@ const NavbarPrincipal = () => {
         <div className="containerNav row">
             <div className="logoPrincipal">
                 <div className="col-lg-3">
-                    <h1>Arthi<strong>color</strong></h1>
+                    <Link to="/">
+                        <h1>Arthi<strong>color</strong></h1>
+                    </Link>
                 </div>
                 <div className="col-lg-7">
 
@@ -39,7 +42,7 @@ const NavbarPrincipal = () => {
                     {category.map(category=>
                         
                             <li key={category}>
-                                <a href={category} target="_top">{category}</a>
+                                <Link to={'/category/' + category} target="_top">{category}</Link>
                             </li>
                     )}
                 </ul>
