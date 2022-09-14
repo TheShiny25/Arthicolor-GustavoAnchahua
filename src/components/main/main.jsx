@@ -2,6 +2,7 @@ import React from 'react'
 import {Routes,Route} from "react-router-dom"
 import ItemDetailContainer from '../container/itemDetailContainer';
 import ItemListContainer from '../container/itemListContainer';
+import Cart from '../container/cart/cart';
 
 
 const Main = ()=>{
@@ -13,6 +14,7 @@ const Main = ()=>{
             </Route>
             <Route path="/item/:idItem" element={<ItemDetailContainer/>}>
             </Route>
+            <Route path='/cart' element={<Cart/>}></Route>
         </Routes>
     );
 }

@@ -1,11 +1,11 @@
-import React,{useState,useEffect} from "react";
+import React,{useState} from "react";
 import './itemCount.css'
 
-const ItemCount = ({stocks,initial})=>{
-    //console.log(stocks,initial);
+const ItemCount = ({stocks,initial,onAdd})=>{
+    //console.log(stocks,initial,onAdd);
     
     const [stockPrincipal,setStockPrincipal] = useState(stocks);
-    const [count,setCount] = useState(0)
+    const [count,setCount] = useState(initial)
     const removeItem = ()=>{
         if(count > initial) {
             setCount(count - 1); 
@@ -18,6 +18,9 @@ const ItemCount = ({stocks,initial})=>{
             setStockPrincipal(stockPrincipal - 1);
         };
     }
+    //console.log(onAdd);
+    //console.log(count);
+    onAdd(count);
 
     return (<div className="box-contador">
         <span className="StockDisponible">Stock Disponible: <strong>{stockPrincipal}</strong> unidades</span>

@@ -1,16 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import {Link} from 'react-router-dom'
 import ItemCount from './itemCount';
 import './itemDetail.css';
 
-const ItemDetail = ({ item: { image, title, description, price, rating } }) => {
-    const { count } = rating
+const ItemDetail = ({ item: { image, title, description, price, stock, thumbnail} }) => {
 
+    const initial = 1;
+    const [add,setAdd] = useState(false);
+    const [quantity,setQuantity] = useState(1)
+
+    const itemQuantity = (count) => {
+        setQuantity(count)
+    }
+    const addToCart =()=>{
+        console.log("itemDetault " + quantity);
+        setAdd(true);
+    }
     return (
         <div className='container'>
             <div className="row">
                 <div className="col-lg-6">
                     <div className="imagenPrincipal">
-                        <img src={image} alt="" />
+                        <img src={thumbnail} alt="" />
                     </div>
                 </div>
                 <div className="col-lg-6">
@@ -24,8 +35,9 @@ const ItemDetail = ({ item: { image, title, description, price, rating } }) => {
                         <div className="price">
                             <span>{price}</span>
                         </div>
-                        <ItemCount stocks={count} initial='0' />
-                        <div className="addCartPro">Agregar Carrito</div>
+                        <ItemCount stocks={stock} initial={initial} onAdd={itemQuantity} /> 
+                        <button className="addCartPro" onClick={addToCart}>Agregar al Carrito</button>
+                        {add ? <Link to= {'/cart'}><button className="btn addCartPro">Comprar Ahora</button></Link> : null}
                     </div>
                 </div>
             </div>

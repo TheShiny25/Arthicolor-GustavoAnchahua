@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {Link} from 'react-router-dom'
 import CartWidget from "./cartWidget";
 import './navbar.css';
@@ -6,21 +6,24 @@ import './navbar.css';
 
 const NavbarPrincipal = () => {
 
-    const [category, setCategory] = useState([]);
+   //const [category, setCategory] = useState([]);
+    const categoryAll = ["smartphones","laptops","fragrances","skincare","motorcycle"]
 
-    const getCategoryAll = async () => {
+/*    const getCategoryAll = async () => {
         try {
-            const response = await fetch('https://fakestoreapi.com/products/categories');
+            const response = await fetch('https://dummyjson.com/products/categories');
             const data = await response.json();
+            
             setCategory(data);
         } catch (error) {
             console.log("Error: " + error);
         }
-    }
+    }*/
 
-    useEffect(() => {
-        getCategoryAll();
-    }, []);
+    /*useEffect(() => {
+        //getCategoryAll();
+    }, []);*/
+    //console.log(category);
 
     return (
         <div className="containerNav row">
@@ -39,7 +42,7 @@ const NavbarPrincipal = () => {
             </div>
             <div className="contentNav">
                 <ul>
-                    {category.map(category=>
+                    {categoryAll.map(category=>
                         
                             <li key={category}>
                                 <Link to={'/category/' + category} target="_top">{category}</Link>

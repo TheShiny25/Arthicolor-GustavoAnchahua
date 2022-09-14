@@ -3,13 +3,14 @@ import {Link} from 'react-router-dom'
 import ItemCount from "./itemCount";
 import './itemProduct.css'
 
-const ItemProduct = ({itemProduct:{id,image,price,title,rating}}) =>{
-    const {count} = rating
+const ItemProduct = ({itemProduct:{id,title,price,thumbnail}}) =>{
+    console.log(id)
+    /*const {count} = rating*/
     return (
     <div className="col-lg-3">
         <div className="boxPro">
             <div className="proImg">
-                <img src={image} alt=""/>
+                <img src={thumbnail} alt=""/>
             </div>
             <div className="proTitle">
                 {title}

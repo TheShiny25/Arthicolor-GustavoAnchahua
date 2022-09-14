@@ -11,7 +11,7 @@ const ItemListContainer = (greeting) => {
 
     const getProductAll = async () => {
         try {
-            const URLAPI = 'https://fakestoreapi.com/';
+            const URLAPI = 'https://dummyjson.com/';
             let URLComplemento ='products';
             if(typeof (nomCategory) !== 'undefined'){
                 URLComplemento = 'products/category/'+nomCategory;
@@ -19,7 +19,8 @@ const ItemListContainer = (greeting) => {
             
             const response = await fetch(`${URLAPI + URLComplemento }`);
             const data = await response.json();
-            setProductItem(data);
+            console.log(data.products);
+            setProductItem(data.products);
             setLoading(false);
         } catch (error) {
             console.log("Error =>" + error);
@@ -27,7 +28,7 @@ const ItemListContainer = (greeting) => {
     }
     useEffect(() => {
         getProductAll();
-    }, [productItem]);
+    }, []);
 
     return (
         <div className="container">
@@ -35,8 +36,8 @@ const ItemListContainer = (greeting) => {
             <div className="row listProducts">
                 {
                     (loading) ? <LoandingInfo /> :
-                        productItem.map(product =>
-                            <ItemProduct key={product.id} itemProduct={product} />
+                        productItem.map(products =>
+                            <ItemProduct key={products.id} itemProduct={products} />
                         )
                 }
             </div>
