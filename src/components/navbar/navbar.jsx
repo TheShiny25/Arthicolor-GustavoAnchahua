@@ -45,7 +45,7 @@ const NavbarPrincipal = () => {
                     {categoryAll.map(category=>
                         
                             <li key={category}>
-                                <Link to={'/category/' + category} target="_top">{category}</Link>
+                                <Link to={'/category/' + category}>{category}</Link>
                             </li>
                     )}
                 </ul>

@@ -8,16 +8,14 @@ import {StoreProvider} from './context/cartContext.jsx';
 
 const App = () => {
   return (
-    <div className='container-fluid'>
-
-      <StoreProvider>
+    <StoreProvider>
+      <div className='container-fluid'>
         <BrowserRouter>
             <NavbarPrincipal/>
             <Main/>
         </BrowserRouter>
-      </StoreProvider>
-      
-    </div> 
+      </div> 
+    </StoreProvider>
   );
 }
 

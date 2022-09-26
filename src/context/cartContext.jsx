@@ -4,9 +4,9 @@ const StoreContext = createContext();
 const useCartContext = ()=> useContext(StoreContext);
 
 export const StoreProvider = ({children})=>{
-    console.log(children);
+    //console.log(children);
+    
     const [products, setProducts] = useState([])
-    console.log(products);
     const [isInCart, setIsInCart] = useState(false)
 
     const addItem = (item, quantity) => {
@@ -46,7 +46,6 @@ export const StoreProvider = ({children})=>{
     return (<StoreContext.Provider  
     value = {{ products, addItem, removeItem, totalProductsPrice, isInCart, cartWidgetCount, cleanListCart}}>
         {children}
-        
     </StoreContext.Provider>);
 }
 

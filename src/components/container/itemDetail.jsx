@@ -6,7 +6,8 @@ import ItemCount from './itemCount';
 import './itemDetail.css';
 
 const ItemDetail = ({item}) => {
-    //console.log(item);
+    console.log(item);
+    const stocks = item.stock;
     const initial = 1;
     const [add,setAdd] = useState(false);
     const [quantity,setQuantity] = useState(1)
@@ -14,6 +15,7 @@ const ItemDetail = ({item}) => {
 
     const itemQuantity = (count) => {
         setQuantity(count)
+        //console.log(count);
     }
     const addToCart =()=>{
         //console.log("itemDetault " + quantity);
@@ -39,7 +41,7 @@ const ItemDetail = ({item}) => {
                         <div className="price">
                             <span>{item.price}</span>
                         </div>
-                        <ItemCount stocks={item.stock} initial={initial} onAdd={itemQuantity} /> 
+                        <ItemCount stocks={stocks} initial={initial} onAdd={itemQuantity} /> 
                         <button className="addCartPro" onClick={addToCart}>Agregar al Carrito</button>
                         {add ? <Link to= {'/cart'}><button className="btn addCartPro">Comprar Ahora</button></Link> : null}
                     </div>

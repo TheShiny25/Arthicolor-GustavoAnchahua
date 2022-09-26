@@ -11,8 +11,9 @@ const ItemListContainer = (greeting) => {
 
     const getProductAll = async () => {
         try {
+            let URLComplemento;
             const URLAPI = 'https://dummyjson.com/';
-            let URLComplemento ='products';
+                URLComplemento ='products';
             if(typeof (nomCategory) !== 'undefined'){
                 URLComplemento = 'products/category/'+nomCategory;
             }
@@ -28,7 +29,7 @@ const ItemListContainer = (greeting) => {
     }
     useEffect(() => {
         getProductAll();
-    }, []);
+    });
 
     return (
         <div className="container">

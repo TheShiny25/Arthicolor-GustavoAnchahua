@@ -6,6 +6,7 @@ const ItemCount = ({stocks,initial,onAdd})=>{
     
     const [stockPrincipal,setStockPrincipal] = useState(stocks);
     const [count,setCount] = useState(initial)
+
     const removeItem = ()=>{
         if(count > initial) {
             setCount(count - 1); 
@@ -19,7 +20,7 @@ const ItemCount = ({stocks,initial,onAdd})=>{
         };
     }
     //console.log(onAdd);
-    //console.log(count);
+    console.log(count);
     onAdd(count);
 
     return (<div className="box-contador">
@@ -27,7 +28,7 @@ const ItemCount = ({stocks,initial,onAdd})=>{
         <div className="boxCount">
             <div onClick={removeItem} className="col-lg-3"><span>-</span></div>
             <div className="col-lg-6"><span>{count}</span></div>
-            <div onClick={addItem} className="col-lg-3"><span>+</span></div>
+            <div onClick={addItem} disabled={count === stocks} className="col-lg-3"><span>+</span></div>
         </div>
     </div>)
 }
