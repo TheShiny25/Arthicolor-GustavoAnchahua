@@ -19,7 +19,7 @@ const ItemListContainer = (greeting) => {
             
             const response = await fetch(`${URLAPI + URLComplemento }`);
             const data = await response.json();
-            console.log(data.products);
+            //console.log(data.products);
             setProductItem(data.products);
             setLoading(false);
         } catch (error) {

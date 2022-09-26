@@ -4,7 +4,7 @@ import ItemCount from "./itemCount";
 import './itemProduct.css'
 
 const ItemProduct = ({itemProduct:{id,title,price,thumbnail}}) =>{
-    console.log(id)
+    //console.log(id)
     /*const {count} = rating*/
     return (
     <div className="col-lg-3">
